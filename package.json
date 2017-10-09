@@ -1,6 +1,9 @@
 {
   "name": "Nefor",
   "private": true,
+  "scripts": {
+    "s": "./bin/webpack-dev-server"
+  },
   "dependencies": {
     "@angular/common": "^4.4.4",
     "@angular/compiler": "^4.4.4",
