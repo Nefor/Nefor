@@ -1,4 +1,7 @@
 class StaticPagesController < ApplicationController
-  def index
+  def frontend
+  end
+
+  def backend
   end
 end
