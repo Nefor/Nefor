@@ -9,6 +9,7 @@ end
 
 gem 'bcrypt'
 gem 'bootstrap-sass'
+gem 'bootstrap-will_paginate'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
@@ -19,11 +20,13 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'debbie', github: 'goodpeople/debbie'
+  gem 'faker'
   gem 'selenium-webdriver'
 end
 
