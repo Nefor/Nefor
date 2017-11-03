@@ -89,6 +89,8 @@ GEM
     coolline (0.5.0)
       unicode_utils (~> 1.4)
     crass (1.0.2)
+    elastic_email_rails (0.1.0)
+      actionmailer (>= 3.2.13)
     erubi (1.7.0)
     execjs (2.7.0)
     faker (1.8.4)
@@ -273,6 +275,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   debbie!
+  elastic_email_rails
   faker
   guard
   guard-minitest
@@ -300,4 +303,4 @@ RUBY VERSION
    ruby 2.4.2p198
 
 BUNDLED WITH
-   1.15.4
+   1.16.0
