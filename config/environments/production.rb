@@ -74,7 +74,7 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :elastic_email
   config.action_mailer.elastic_email_settings = {
-    api_key: ENV['MAIL_API_KEY'],
+    api_key: Rails.application.secrets.mail_api_key,
     username: 'v.v.grimm@gmail.com'
   }
 
