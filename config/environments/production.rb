@@ -62,20 +62,15 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "Nefor_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #     address:              'smtp.gmail.com',
-  #     port:                 587,
-  #     domain:               'gmail.com',
-  #     user_name:            'v.v.grimm@gmail.com',
-  #     password:             ENV['MAIL_PASSWORD'],
-  #     authentication:       'plain',
-  #     enable_starttls_auto: true  }
-
-  config.action_mailer.delivery_method = :elastic_email
-  config.action_mailer.elastic_email_settings = {
-    api_key: Rails.application.secrets.mail_api_key,
-    username: 'v.v.grimm@gmail.com'
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    domain: 'gmail.com',
+    authentication: 'plain',
+    user_name: 'v.v.grimm@gmail.com',
+    password: Rails.application.secrets.email_password,
+    enable_starttls_auto: true
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
