@@ -12,6 +12,7 @@ yarn s
 rails s
 ```
 Prepare for using:
+* imagemagick
 * yarn install
 * bundle
 * rails db:create db:migrate
