@@ -10,9 +10,12 @@ end
 gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'
+gem 'carrierwave'
 gem 'coffee-rails', '~> 4.2'
+gem 'fog'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+gem 'mini_magick'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.4'
@@ -21,6 +24,10 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 gem 'will_paginate'
+
+
+
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
