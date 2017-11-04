@@ -1,0 +1,15 @@
+one:
+  follower: nefor
+  followed: lana
+
+two:
+  follower: nefor
+  followed: malory
+
+three:
+  follower: lana
+  followed: nefor
+
+four:
+  follower: archer
+  followed: nefor
