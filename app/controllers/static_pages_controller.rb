@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def frontend
+    render layout: 'ng_book'
   end
 
   def backend
