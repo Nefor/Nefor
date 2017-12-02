@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RedditArticle } from "./reddit-article/reddit-article.model";
 
 @Component({
   selector: 'reddit',
@@ -21,15 +22,32 @@ import { Component } from '@angular/core';
   </form>
 
   <div class="ui grid posts">
-    <reddit-article>      
+    <reddit-article *ngFor="let article of sortedArticles()" [article]="article">      
     </reddit-article>
   </div>  
   `
 })
 
 export class RedditComponent {
+  articles: RedditArticle[];
+
+  constructor(){
+    this.articles = [
+      new RedditArticle('Angular 2', 'https://angular.io', 3),
+      new RedditArticle('Fullstack', 'https://fullstack.io', 2),
+      new RedditArticle('Nefor project', 'https://nefor.herokuapp.com', 100),
+    ];
+  }
+
   addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean{
     console.log(`Adding article title: ${title.value} and link: ${link.value}`);
+    this.articles.push(new RedditArticle(title.value, link.value, 0));
+    title.value = '';
+    link.value = '';
     return false;
+  }
+
+  sortedArticles(): RedditArticle[]{
+    return this.articles.sort((a: RedditArticle, b: RedditArticle) => b.votes - a.votes);
   }
 }

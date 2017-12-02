@@ -1,4 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 import { RedditArticle } from './reddit-article.model';
 
 @Component({
@@ -18,6 +18,7 @@ import { RedditArticle } from './reddit-article.model';
     <a class="ui large header" href="{{ article.link }}">
       {{ article.title }}
     </a>
+    <div class="meta">({{ article.domain() }})</div>
     <ul class="ui big horizontal list voters">
       <li class="item">
         <a href (click)="voteUp()">
@@ -38,11 +39,7 @@ import { RedditArticle } from './reddit-article.model';
 
 export class RedditArticleComponent {
   @HostBinding('attr.class') cssClass = 'row';
-  article: RedditArticle;
-
-  constructor() {
-    this.article = new RedditArticle('Angular 2', 'https://angular.io', 10);
-  }
+  @Input() article: RedditArticle;
 
   voteUp(): boolean{
     this.article.voteUp();
