@@ -19,8 +19,11 @@ import { Component } from '@angular/core';
       Submit link
     </button>
   </form>
-  
-  <reddit-article></reddit-article>  
+
+  <div class="ui grid posts">
+    <reddit-article>      
+    </reddit-article>
+  </div>  
   `
 })
 
