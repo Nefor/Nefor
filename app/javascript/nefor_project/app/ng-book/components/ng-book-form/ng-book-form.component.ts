@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, AbstractControl, Validators } from "@angular/forms";
 
 @Component({
   selector: 'ng-book-form',
@@ -10,13 +10,17 @@ import { FormBuilder, FormGroup } from "@angular/forms";
       [formGroup]="myForm" 
       (ngSubmit)="onSubmit(myForm.value)" 
       class="ui form">
-      <div class="field">
+      <div class="field" [class.error]="!sku.valid && sku.touched">
         <label for="skuInput">SKU</label>
         <input 
           type="text" 
           id="skuInput" 
           placeholder="SKU" 
           [formControl]="myForm.controls['sku']">
+        <div *ngIf="!sku.valid"
+          class="ui error message">SKU is invalid</div>   
+        <div *ngIf="sku.hasError('required')"
+          class="ui error message">SKU is required</div>   
       </div>
       
       <button type="submit" class="ui button">Submit</button>
@@ -27,11 +31,14 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 
 export class NgBookFormComponent {
   myForm: FormGroup;
+  sku: AbstractControl;
 
   constructor(fb: FormBuilder){
     this.myForm = fb.group({
-      'sku': ['']
+      'sku': ['', Validators.required]
     });
+
+    this.sku = this.myForm.controls['sku']
   }
 
   onSubmit(form: any): void{
