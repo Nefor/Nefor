@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { FormBuilder, FormGroup, AbstractControl, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, AbstractControl, Validators, FormControl } from "@angular/forms";
 
 @Component({
   selector: 'ng-book-form',
@@ -35,7 +35,7 @@ export class NgBookFormComponent {
 
   constructor(fb: FormBuilder){
     this.myForm = fb.group({
-      'sku': ['', Validators.required]
+      'sku': ['', Validators.compose([Validators.required, this.skuValidator])]
     });
 
     this.sku = this.myForm.controls['sku']
@@ -43,5 +43,11 @@ export class NgBookFormComponent {
 
   onSubmit(form: any): void{
     console.log(form);
+  }
+
+  skuValidator(control: FormControl): { [s: string]: boolean }{
+    if (!control.value.match(/^123/)) {
+      return {invalidSku: true}
+    }
   }
 }
