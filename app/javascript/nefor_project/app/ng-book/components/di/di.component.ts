@@ -1,4 +1,4 @@
-import { Component, ReflectiveInjector } from "@angular/core";
+import { Component } from "@angular/core";
 import { NgbookUserService } from "../../services/ngbook-user.service";
 
 @Component({
@@ -23,9 +23,8 @@ export class DiComponent {
   userName: string;
   userService: NgbookUserService;
 
-  constructor(){
-    const injector: any = ReflectiveInjector.resolveAndCreate([NgbookUserService]);
-    this.userService = injector.get(NgbookUserService);
+  // Angular will inject the singleton instance of `UserService` here.
+  constructor(private userService: NgbookUserService){
   }
 
   signIn() {
