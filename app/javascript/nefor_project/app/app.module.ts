@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from "./ng-book/components/hello-world/hello-world.component";
@@ -11,6 +12,7 @@ import { InventoryProductsListComponent } from "./ng-book/components/inventory-a
 import { InventoryProductImgComponent } from "./ng-book/components/inventory-app/inventory-product-img/inventory-product-img.component";
 import { InventoryPriceComponent } from "./ng-book/components/inventory-app/inventory-price/inventory-price.component";
 import { InventoryProductDepartmentComponent } from "./ng-book/components/inventory-app/inventory-product-department/inventory-product-department.component";
+import { NgBookFormComponent } from "./ng-book/components/ng-book-form/ng-book-form.component";
 
 @NgModule({
   declarations: [
@@ -23,10 +25,13 @@ import { InventoryProductDepartmentComponent } from "./ng-book/components/invent
     InventoryProductsListComponent,
     InventoryProductImgComponent,
     InventoryPriceComponent,
-    InventoryProductDepartmentComponent
+    InventoryProductDepartmentComponent,
+    NgBookFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
