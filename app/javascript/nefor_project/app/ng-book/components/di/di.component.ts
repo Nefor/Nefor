@@ -21,7 +21,6 @@ import { NgbookUserService } from "../../services/ngbook-user.service";
 
 export class DiComponent {
   userName: string;
-  userService: NgbookUserService;
 
   // Angular will inject the singleton instance of `UserService` here.
   constructor(private userService: NgbookUserService){
