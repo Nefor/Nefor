@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+import { youtubeSearchInjectables } from "./ng-book/components/youtube-search/youtube-search.injectables";
+import { YoutubeSearchComponent } from "./ng-book/components/youtube-search/youtube-search.component";
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from "./ng-book/components/hello-world/hello-world.component";
@@ -15,6 +18,10 @@ import { InventoryProductDepartmentComponent } from "./ng-book/components/invent
 import { NgBookFormComponent } from "./ng-book/components/ng-book-form/ng-book-form.component";
 import { DiComponent } from "./ng-book/components/di/di.component";
 import { NgbookUserService } from "./ng-book/services/ngbook-user.service";
+import { SimpleHttpComponent } from "./ng-book/components/simple-http/simple-http.component";
+import { YoutubeSearchBoxComponent } from "./ng-book/components/youtube-search/youtube-search-box.component";
+import {YoutubeSearchResultComponent} from "./ng-book/components/youtube-search/youtube-search-result.component";
+
 
 @NgModule({
   declarations: [
@@ -29,15 +36,21 @@ import { NgbookUserService } from "./ng-book/services/ngbook-user.service";
     InventoryPriceComponent,
     InventoryProductDepartmentComponent,
     NgBookFormComponent,
-    DiComponent
+    DiComponent,
+    SimpleHttpComponent,
+    YoutubeSearchBoxComponent,
+    YoutubeSearchResultComponent,
+    YoutubeSearchComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
-    NgbookUserService
+    NgbookUserService,
+    youtubeSearchInjectables
   ],
   bootstrap: [AppComponent]
 })

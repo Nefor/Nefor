@@ -7,7 +7,9 @@ import { Component } from '@angular/core';
   <!--<reddit></reddit>-->
   <!--<inventory-app></inventory-app>  -->
   <!--<ng-book-form></ng-book-form>  -->
-  <di></di>
+  <!--<di></di>-->
+  <!--<simple-http></simple-http>-->
+  <youtube-search></youtube-search>
   `
 })
 export class AppComponent {
