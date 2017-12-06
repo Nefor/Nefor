@@ -13,6 +13,8 @@ import { InventoryProductImgComponent } from "./ng-book/components/inventory-app
 import { InventoryPriceComponent } from "./ng-book/components/inventory-app/inventory-price/inventory-price.component";
 import { InventoryProductDepartmentComponent } from "./ng-book/components/inventory-app/inventory-product-department/inventory-product-department.component";
 import { NgBookFormComponent } from "./ng-book/components/ng-book-form/ng-book-form.component";
+import { DiComponent } from "./ng-book/components/di/di.component";
+import { NgbookUserService } from "./ng-book/services/ngbook-user.service";
 
 @NgModule({
   declarations: [
@@ -26,14 +28,17 @@ import { NgBookFormComponent } from "./ng-book/components/ng-book-form/ng-book-f
     InventoryProductImgComponent,
     InventoryPriceComponent,
     InventoryProductDepartmentComponent,
-    NgBookFormComponent
+    NgBookFormComponent,
+    DiComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    NgbookUserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
