@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from "./ng-book/components/hello-world/hello-world.component";
@@ -15,6 +16,7 @@ import { InventoryProductDepartmentComponent } from "./ng-book/components/invent
 import { NgBookFormComponent } from "./ng-book/components/ng-book-form/ng-book-form.component";
 import { DiComponent } from "./ng-book/components/di/di.component";
 import { NgbookUserService } from "./ng-book/services/ngbook-user.service";
+import { SimpleHttpComponent } from "./ng-book/components/simple-http/simple-http.component";
 
 @NgModule({
   declarations: [
@@ -29,12 +31,14 @@ import { NgbookUserService } from "./ng-book/services/ngbook-user.service";
     InventoryPriceComponent,
     InventoryProductDepartmentComponent,
     NgBookFormComponent,
-    DiComponent
+    DiComponent,
+    SimpleHttpComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     NgbookUserService
