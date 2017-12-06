@@ -20,7 +20,7 @@ import { DiComponent } from "./ng-book/components/di/di.component";
 import { NgbookUserService } from "./ng-book/services/ngbook-user.service";
 import { SimpleHttpComponent } from "./ng-book/components/simple-http/simple-http.component";
 import { YoutubeSearchBoxComponent } from "./ng-book/components/youtube-search/youtube-search-box.component";
-import {YoutubeSearchResultComponent} from "./ng-book/components/youtube-search/youtube-search-result.component";
+import { YoutubeSearchResultComponent } from "./ng-book/components/youtube-search/youtube-search-result.component";
 
 
 @NgModule({
