@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
   <!--<inventory-app></inventory-app>  -->
   <!--<ng-book-form></ng-book-form>  -->
   <!--<di></di>-->
-  <simple-http></simple-http>
+  <!--<simple-http></simple-http>-->
+  <youtube-search></youtube-search>
   `
 })
 export class AppComponent {
