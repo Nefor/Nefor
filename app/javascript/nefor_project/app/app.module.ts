@@ -4,6 +4,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { youtubeSearchInjectables } from "./ng-book/components/youtube-search/youtube-search.injectables";
 import { YoutubeSearchComponent } from "./ng-book/components/youtube-search/youtube-search.component";
+import { RouterModule, Routes } from "@angular/router";
+import { LocationStrategy, HashLocationStrategy, APP_BASE_HREF } from "@angular/common";
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from "./ng-book/components/hello-world/hello-world.component";
@@ -21,7 +23,17 @@ import { NgbookUserService } from "./ng-book/services/ngbook-user.service";
 import { SimpleHttpComponent } from "./ng-book/components/simple-http/simple-http.component";
 import { YoutubeSearchBoxComponent } from "./ng-book/components/youtube-search/youtube-search-box.component";
 import { YoutubeSearchResultComponent } from "./ng-book/components/youtube-search/youtube-search-result.component";
+import { SpotifyService } from "./ng-book/services/spotify.service";
+import { SpotifySearchComponent } from "./ng-book/components/spotify-search/spotify-search.component";
 
+const routes: Routes = [
+  { path: '', redirectTo: 'search', pathMatch: 'full' },
+  { path: 'static_pages/frontend', redirectTo: 'search', pathMatch: 'full' },
+  { path: 'search', component: SpotifySearchComponent },
+  { path: 'artists/:id', component: HelloWorldComponent },
+  { path: 'tracks/:id', component: HelloWorldComponent },
+  { path: 'albums/:id', component: HelloWorldComponent },
+];
 
 @NgModule({
   declarations: [
@@ -40,17 +52,20 @@ import { YoutubeSearchResultComponent } from "./ng-book/components/youtube-searc
     SimpleHttpComponent,
     YoutubeSearchBoxComponent,
     YoutubeSearchResultComponent,
-    YoutubeSearchComponent
+    YoutubeSearchComponent,
+    SpotifySearchComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
     NgbookUserService,
-    youtubeSearchInjectables
+    youtubeSearchInjectables,
+    SpotifyService
   ],
   bootstrap: [AppComponent]
 })
