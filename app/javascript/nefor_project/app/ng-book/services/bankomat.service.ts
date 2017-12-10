@@ -4,8 +4,8 @@ import {FormControl} from "@angular/forms";
 
 @Injectable()
 export class BankomatService {
-  URL_API = 'http://localhost:3000/api';
-  // URL_API = 'https://nefor.herokuapp.com/api'
+  // URL_API = 'http://localhost:3000/api';
+  URL_API = 'https://nefor.herokuapp.com';
   constructor(public http: HttpClient) {
   }
 
