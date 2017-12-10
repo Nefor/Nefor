@@ -21,5 +21,11 @@ Rails.application.routes.draw do
   resources :microposts,          only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
 
+  namespace :api, defaults: { format: 'json' } do
+    resources :money, only: :index
+    get '/insert_money', to: 'money#insert'
+    get '/take_money', to: 'money#take'
+  end
+
   match '*path' => 'static_pages#index', via: [:get]
 end

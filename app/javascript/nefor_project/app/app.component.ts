@@ -9,7 +9,8 @@ import { Component } from '@angular/core';
   <!--<ng-book-form></ng-book-form>  -->
   <!--<simple-http></simple-http>-->
   <!--<youtube-search></youtube-search>-->
-  <spotify-search></spotify-search>
+  <!--<spotify-search></spotify-search>-->
+  <bankomat></bankomat>
   `
 })
 export class AppComponent {
