@@ -19,5 +19,29 @@ module Api
         coins: coins
       }
     end
+
+    def insert_money(data)
+      info = JSON(data)
+      info["banknotes"].each do |key, value|
+        banknote = Money.banknotes.find_by_denomination(key.to_i)
+        banknote.update(total: banknote.total += value.to_i)
+      end
+      info["coins"].each do |key, value|
+        coin = Money.coins.find_by_denomination(key.to_i)
+        coin.update(total: coin.total += value.to_i)
+      end
+    end
+
+    def take_money(data)
+      info = JSON(data)
+      info["banknotes"].each do |key, value|
+        banknote = Money.banknotes.find_by_denomination(key.to_i)
+        banknote.update(total: banknote.total -= value.to_i)
+      end
+      info["coins"].each do |key, value|
+        coin = Money.coins.find_by_denomination(key.to_i)
+        coin.update(total: coin.total -= value.to_i)
+      end
+    end
   end
 end

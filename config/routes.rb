@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: 'json' } do
     resources :money, only: :index
+    get '/insert_money', to: 'money#insert'
   end
 
   match '*path' => 'static_pages#index', via: [:get]

@@ -5,12 +5,12 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 @Component({
   selector: 'bankomat',
   template: `
-  <button class="btn btn-primary" (click)="putMoneyRequest()">Put Money</button>
+  <button class="btn btn-primary" (click)="wantAddMoney()">Put Money</button>
   <button class="btn btn-primary" (click)="takeMoneyRequest()">Take Money Back</button>
   <button class="btn btn-primary" (click)="showBalance()">Get Balance</button>
   <div *ngIf="showPutMoneyForm" class="ui raised segment">
     <h2 class="ui header">Insert money:</h2>
-    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="ui form">
+    <form [formGroup]="myForm" (ngSubmit)="insertMoney(myForm.value)" class="ui form">
       <div formGroupName="banknotes" class="col-sm-6">
         <div class="field">
           <label for="1">1 UAH</label>
@@ -76,30 +76,22 @@ export class BankomatComponent implements OnInit{
     for (let banknote of this.UAH_BANKNOTES) {
       this.banknotesGroup.addControl(banknote, new FormControl(''));
     }
-    // console.log(this.banknotesGroup);
     this.coinsGroup = fb.group({
       '1': ['']
     });
     for (let coin of this.UAH_COINS) {
       this.coinsGroup.addControl(coin, new FormControl(''));
     }
-    // console.log(this.coinsGroup);
     this.myForm = fb.group({
       banknotes: this.banknotesGroup,
       coins: this.coinsGroup
     });
-    console.log(this.myForm);
   }
 
   ngOnInit(): void {
     this.showBalanceInfo = false;
     this.showTakeMoneyForm = false;
-    this.showPutMoneyForm = true;
-  }
-
-  putMoneyRequest(): void {
-    this.showPutMoneyForm = true;
-    console.log('putMoneyRequest()');
+    this.showPutMoneyForm = false;
   }
 
   takeMoneyRequest(): void {
@@ -116,11 +108,27 @@ export class BankomatComponent implements OnInit{
       });
   }
 
+  wantAddMoney(): void {
+    this.showTakeMoneyForm = false;
+    this.showPutMoneyForm = false;
+    this.showPutMoneyForm = true;
+  }
+
   closeInfo(): void {
     this.showBalanceInfo = false;
   }
 
-  onSubmit(form: any): void {
-    console.log(form);
+  insertMoney(form: any): void {
+    this.service.insertMoney(form)
+      .subscribe(res => {
+
+        Object.keys(this.banknotesGroup.controls).forEach(key => {
+          this.banknotesGroup.get(key).setValue('');
+        });
+        Object.keys(this.coinsGroup.controls).forEach(key => {
+          this.coinsGroup.get(key).setValue('');
+        });
+        this.showPutMoneyForm = false;
+      });
   }
 }
