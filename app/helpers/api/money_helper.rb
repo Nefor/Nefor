@@ -2,14 +2,14 @@ module Api
   module MoneyHelper
     def collect_data
       total = 0
-      banknotes = {}
-      coins = {}
+      banknotes = []
+      coins = []
       Money.banknotes.each do |b|
-        banknotes[b.denomination.to_s] = b.total
+        banknotes << [b.denomination.to_s, b.total]
         total += b.denomination * b.total
       end
       Money.coins.each do |c|
-        coins[c.denomination.to_s] = c.total
+        coins << [c.denomination.to_s, c.total]
         total += c.coefficient * c.total
       end
       {
