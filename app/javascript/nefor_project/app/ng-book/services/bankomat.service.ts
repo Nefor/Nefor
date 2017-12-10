@@ -16,4 +16,8 @@ export class BankomatService {
   insertMoney(data: any) {
     return this.http.get(this.URL_API + '/insert_money', { params: {'money': JSON.stringify(data)} });
   }
+
+  takeMoney(data: any) {
+    return this.http.get(this.URL_API + '/take_money', { params: {'money': JSON.stringify(data)} });
+  }
 }

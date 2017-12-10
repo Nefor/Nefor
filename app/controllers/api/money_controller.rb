@@ -9,5 +9,10 @@ module Api
       insert_money(params[:money])
       render json: {status: 'ok'}
     end
+
+    def take
+      take_money(params[:money])
+      render json: {status: 'ok'}
+    end
   end
 end
