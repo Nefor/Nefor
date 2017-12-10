@@ -25,6 +25,7 @@ import { YoutubeSearchBoxComponent } from "./ng-book/components/youtube-search/y
 import { YoutubeSearchResultComponent } from "./ng-book/components/youtube-search/youtube-search-result.component";
 import { SpotifyService } from "./ng-book/services/spotify.service";
 import { SpotifySearchComponent } from "./ng-book/components/spotify-search/spotify-search.component";
+import { BancomatComponent } from "./ng-book/components/bankomat/bancomat.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
@@ -53,7 +54,8 @@ const routes: Routes = [
     YoutubeSearchBoxComponent,
     YoutubeSearchResultComponent,
     YoutubeSearchComponent,
-    SpotifySearchComponent
+    SpotifySearchComponent,
+    BancomatComponent
   ],
   imports: [
     BrowserModule,
