@@ -6,6 +6,7 @@ import { youtubeSearchInjectables } from "./ng-book/components/youtube-search/yo
 import { YoutubeSearchComponent } from "./ng-book/components/youtube-search/youtube-search.component";
 import { RouterModule, Routes } from "@angular/router";
 import { LocationStrategy, HashLocationStrategy, APP_BASE_HREF } from "@angular/common";
+import {chatUserServiceInjectables} from "./ng-book/services/ng-chat/chat-user.service";
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from "./ng-book/components/hello-world/hello-world.component";
@@ -69,7 +70,8 @@ const routes: Routes = [
     NgbookUserService,
     youtubeSearchInjectables,
     SpotifyService,
-    BankomatService
+    BankomatService,
+    chatUserServiceInjectables
   ],
   bootstrap: [AppComponent]
 })
