@@ -6,6 +6,9 @@ import { youtubeSearchInjectables } from "./ng-book/components/youtube-search/yo
 import { YoutubeSearchComponent } from "./ng-book/components/youtube-search/youtube-search.component";
 import { RouterModule, Routes } from "@angular/router";
 import { LocationStrategy, HashLocationStrategy, APP_BASE_HREF } from "@angular/common";
+import {chatUserServiceInjectables} from "./ng-book/services/ng-chat/chat-user.service";
+import {chatMessagesServiceInjectables} from "./ng-book/services/ng-chat/chat-message.service";
+import {chatThreadsServiceInjectables} from "./ng-book/services/ng-chat/chat-thread.service";
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from "./ng-book/components/hello-world/hello-world.component";
@@ -26,7 +29,12 @@ import { YoutubeSearchResultComponent } from "./ng-book/components/youtube-searc
 import { SpotifyService } from "./ng-book/services/spotify.service";
 import { SpotifySearchComponent } from "./ng-book/components/spotify-search/spotify-search.component";
 import { BankomatComponent } from "./ng-book/components/bankomat/bankomat.component";
-import { BankomatService } from './ng-book/services/bankomat.service'
+import { BankomatService } from './ng-book/services/bankomat.service';
+import {NgChatComponent} from "./ng-book/components/ng-chat/ng-chat.component";
+import {ChatThreadsComponent} from "./ng-book/components/ng-chat/chat-thread/chat-threads.component";
+import {ChatThreadComponent} from "./ng-book/components/ng-chat/chat-thread/chat-thread.component";
+import {ChatWindowComponent} from "./ng-book/components/ng-chat/chat-window.component";
+import {ChatMessageComponent} from "./ng-book/components/ng-chat/chat-message/chat-message.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
@@ -56,7 +64,12 @@ const routes: Routes = [
     YoutubeSearchResultComponent,
     YoutubeSearchComponent,
     SpotifySearchComponent,
-    BankomatComponent
+    BankomatComponent,
+    NgChatComponent,
+    ChatThreadsComponent,
+    ChatThreadComponent,
+    ChatWindowComponent,
+    ChatMessageComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +82,10 @@ const routes: Routes = [
     NgbookUserService,
     youtubeSearchInjectables,
     SpotifyService,
-    BankomatService
+    BankomatService,
+    chatUserServiceInjectables,
+    chatMessagesServiceInjectables,
+    chatThreadsServiceInjectables
   ],
   bootstrap: [AppComponent]
 })

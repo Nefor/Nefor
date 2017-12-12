@@ -11,6 +11,7 @@ import { Component } from '@angular/core';
   <!--<youtube-search></youtube-search>-->
   <!--<spotify-search></spotify-search>-->
   <bankomat></bankomat>
+  <!--<ng-chat></ng-chat>-->
   `
 })
 export class AppComponent {
