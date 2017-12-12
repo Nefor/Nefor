@@ -8,6 +8,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { LocationStrategy, HashLocationStrategy, APP_BASE_HREF } from "@angular/common";
 import {chatUserServiceInjectables} from "./ng-book/services/ng-chat/chat-user.service";
 import {chatMessagesServiceInjectables} from "./ng-book/services/ng-chat/chat-message.service";
+import {chatThreadsServiceInjectables} from "./ng-book/services/ng-chat/chat-thread.service";
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from "./ng-book/components/hello-world/hello-world.component";
@@ -73,7 +74,8 @@ const routes: Routes = [
     SpotifyService,
     BankomatService,
     chatUserServiceInjectables,
-    chatMessagesServiceInjectables
+    chatMessagesServiceInjectables,
+    chatThreadsServiceInjectables
   ],
   bootstrap: [AppComponent]
 })
