@@ -29,7 +29,12 @@ import { YoutubeSearchResultComponent } from "./ng-book/components/youtube-searc
 import { SpotifyService } from "./ng-book/services/spotify.service";
 import { SpotifySearchComponent } from "./ng-book/components/spotify-search/spotify-search.component";
 import { BankomatComponent } from "./ng-book/components/bankomat/bankomat.component";
-import { BankomatService } from './ng-book/services/bankomat.service'
+import { BankomatService } from './ng-book/services/bankomat.service';
+import {NgChatComponent} from "./ng-book/components/ng-chat/ng-chat.component";
+import {ChatThreadsComponent} from "./ng-book/components/ng-chat/chat-thread/chat-threads.component";
+import {ChatThreadComponent} from "./ng-book/components/ng-chat/chat-thread/chat-thread.component";
+import {ChatWindowComponent} from "./ng-book/components/ng-chat/chat-window.component";
+import {ChatMessageComponent} from "./ng-book/components/ng-chat/chat-message/chat-message.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
@@ -59,7 +64,12 @@ const routes: Routes = [
     YoutubeSearchResultComponent,
     YoutubeSearchComponent,
     SpotifySearchComponent,
-    BankomatComponent
+    BankomatComponent,
+    NgChatComponent,
+    ChatThreadsComponent,
+    ChatThreadComponent,
+    ChatWindowComponent,
+    ChatMessageComponent
   ],
   imports: [
     BrowserModule,
