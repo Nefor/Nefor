@@ -10,7 +10,8 @@ import {chatUserServiceInjectables} from "./ng-book/services/ng-chat/chat-user.s
 import {chatMessagesServiceInjectables} from "./ng-book/services/ng-chat/chat-message.service";
 import {chatThreadsServiceInjectables} from "./ng-book/services/ng-chat/chat-thread.service";
 import { PopupDirective } from "./ng-book/directives/popup.directive";
-
+import {ContentTabsetComponent} from "./ng-book/components/tabs/content-tabset.component";
+import {ContentTabComponent} from "./ng-book/components/tabs/content-tab.component";
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from "./ng-book/components/hello-world/hello-world.component";
 import { RedditComponent } from "./ng-book/components/reddit/reddit.component";
@@ -73,7 +74,9 @@ const routes: Routes = [
     ChatWindowComponent,
     ChatMessageComponent,
     PopupDirective,
-    MessageoComponent
+    MessageoComponent,
+    ContentTabsetComponent,
+    ContentTabComponent
   ],
   imports: [
     BrowserModule,

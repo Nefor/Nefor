@@ -12,6 +12,11 @@ import { Component } from '@angular/core';
   <div app-message header="My message">
     This is the content of the message
   </div>
+  
+  <tabset>
+    <tab title="Tab 1">Tab 1</tab>
+    <tab title="Tab 2">Tab 2</tab>
+  </tabset>
   `
 })
 
