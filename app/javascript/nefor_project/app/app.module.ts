@@ -9,6 +9,7 @@ import { LocationStrategy, HashLocationStrategy, APP_BASE_HREF } from "@angular/
 import {chatUserServiceInjectables} from "./ng-book/services/ng-chat/chat-user.service";
 import {chatMessagesServiceInjectables} from "./ng-book/services/ng-chat/chat-message.service";
 import {chatThreadsServiceInjectables} from "./ng-book/services/ng-chat/chat-thread.service";
+import { PopupDirective } from "./ng-book/directives/popup.directive";
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from "./ng-book/components/hello-world/hello-world.component";
@@ -69,7 +70,8 @@ const routes: Routes = [
     ChatThreadsComponent,
     ChatThreadComponent,
     ChatWindowComponent,
-    ChatMessageComponent
+    ChatMessageComponent,
+    PopupDirective
   ],
   imports: [
     BrowserModule,
