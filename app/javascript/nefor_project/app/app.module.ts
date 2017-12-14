@@ -36,6 +36,7 @@ import {ChatThreadsComponent} from "./ng-book/components/ng-chat/chat-thread/cha
 import {ChatThreadComponent} from "./ng-book/components/ng-chat/chat-thread/chat-thread.component";
 import {ChatWindowComponent} from "./ng-book/components/ng-chat/chat-window.component";
 import {ChatMessageComponent} from "./ng-book/components/ng-chat/chat-message/chat-message.component";
+import {MessageoComponent} from "./ng-book/components/messageo/messageo.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
@@ -71,7 +72,8 @@ const routes: Routes = [
     ChatThreadComponent,
     ChatWindowComponent,
     ChatMessageComponent,
-    PopupDirective
+    PopupDirective,
+    MessageoComponent
   ],
   imports: [
     BrowserModule,

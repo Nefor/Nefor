@@ -8,6 +8,10 @@ import { Component } from '@angular/core';
       Learning Directives!
     </div>
   </div>
+  
+  <div app-message header="My message">
+    This is the content of the message
+  </div>
   `
 })
 
