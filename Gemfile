@@ -36,6 +36,7 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails', '~> 3.6'
   gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
 end
 
 group :development do
