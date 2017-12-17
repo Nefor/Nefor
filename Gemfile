@@ -31,8 +31,12 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'debbie', github: 'goodpeople/debbie'
+  gem 'factory_bot'
+  gem 'factory_bot_rails'
   gem 'faker'
+  gem 'rspec-rails', '~> 3.6'
   gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
 end
 
 group :development do
