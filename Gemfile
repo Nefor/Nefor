@@ -32,6 +32,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'debbie', github: 'goodpeople/debbie'
   gem 'faker'
+  gem 'rspec-rails', '~> 3.6'
   gem 'selenium-webdriver'
 end
 
