@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'nefor-project',
   template: `    
   <h1>Hello {{name}}</h1>
+  <!--<hello-world></hello-world>-->
   <!--<reddit></reddit>-->
   <!--<inventory-app></inventory-app>  -->
   <!--<ng-book-form></ng-book-form>  -->
